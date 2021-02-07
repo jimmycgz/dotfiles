@@ -11,7 +11,7 @@ dotfiles_dir=$(pwd)/conf-dot-files
 #dotfiles_dir=$(pwd)/dotfiles/conf-dot-files
 
 #==============
-# Backup existing dot files and folders
+# Backup existing dot files, replace the existing dot files only
 #==============
 export BKP_DOT_FOLDER=$HOME/BKP-dotfiles-$(date "+DATE-%Y-%m-%d")
 mkdir -p $BKP_DOT_FOLDER
@@ -32,6 +32,23 @@ unset IFS
 echo " "
 echo " Below legacy dot files are moved to folder: $BKP_DOT_FOLDER"
 ls -a $BKP_DOT_FOLDER
+
+#==============
+# Add docker and k8s dot files
+#==============
+export BKP_DOT_FOLDER=$HOME/BKP-dotfiles-$(date "+DATE-%Y-%m-%d")
+mkdir -p $BKP_DOT_FOLDER
+
+IFS=' '
+K8S_FILES="bash_docker_aliases bash_kubectl_aliases "
+for FILE in $K8S_FILES; do 
+    if [ -e $dotfiles_dir/$FILE ]; then
+        ln -sf $dotfiles_dir/$FILE $HOME/.$FILE > /dev/null 2>&1
+    fi
+    
+done
+
+unset IFS
 
 
 #==============
