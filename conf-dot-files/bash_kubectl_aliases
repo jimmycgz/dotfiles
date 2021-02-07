@@ -15,6 +15,20 @@
 
 alias gh='history|grep'
 
+# search aliases and commands
+alias gk='cat_k8s | grep'
+
+cat_k8s() {
+if [ -e $HOME/.bash_kubectl_aliases ]; then
+    cat ~/.bash_kubectl_aliases
+elif [ -e $HOME/.bashrc_kubectl_aliases ]; then
+    cat ~/.bashrc_kubectl_aliases  
+fi
+}
+
+alias gk='[ -f ~/.bash_kubectl_aliases ] && cat ~/.bash_kubectl_aliases|grep'
+alias gk='[ -f ~/.bashrc_kubectl_aliases ] && cat ~/.bashrc_kubectl_aliases|grep'
+
 alias k='kubectl'
 
 alias kc='kubectl create'
@@ -45,9 +59,9 @@ alias krm='kubectl delete'
 alias kkrm='kubectl --namespace=kube-system delete'
 alias krun='kubectl run --rm --restart=Never --image-pull-policy=IfNotPresent -i -t'
 alias kdry='kubectl run --image-pull-policy=IfNotPresent --dry-run=client'
-alias kdryo='kubectl run --image-pull-policy=IfNotPresent --dry-run=client'
+alias kdryo='kubectl run --image-pull-policy=IfNotPresent --dry-run=client -o yaml'
 alias kkdry='kubectl --namespace=kube-system run --image-pull-policy=IfNotPresent --dry-run=client'
-alias kkdryo='kubectl --namespace=kube-system run --image-pull-policy=IfNotPresent --dry-run=client'
+alias kkdryo='kubectl --namespace=kube-system run --image-pull-policy=IfNotPresent --dry-run=client -o yaml'
 alias kkrun='kubectl --namespace=kube-system run --rm --restart=Never --image-pull-policy=IfNotPresent -i -t'
 alias kgpo='kubectl get pods'
 alias kkgpo='kubectl --namespace=kube-system get pods'
