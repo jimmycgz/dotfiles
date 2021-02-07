@@ -36,6 +36,9 @@ alias kcf='kubectl create -f'
 alias kcfdry='kubectl create --dry-run=client -f'
 alias kcns='kubectl create ns'
 alias ke="kubectl explain"
+alias kexp="kubectl expose"
+alias kexpdep="kubectl expose deployment"
+alias kexpo="kubectl expose pod"
 
 alias kk='kubectl --namespace=kube-system'
 alias ka='kubectl apply --recursive -f'

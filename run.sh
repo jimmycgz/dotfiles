@@ -1,5 +1,15 @@
 #!/bin/bash
 
+pre_check () {
+    # Assume .zshrc is used if exists, or assume .bashrc is the right one if exists
+    SOURCE_FILE="NONE"
+    if [ -e $HOME/.zshrc ]; then
+        SOURCE_FILE=$HOME/.zshrc
+    elif [ -e $HOME/.bashrc ]; then
+        SOURCE_FILE=$HOME/.bashrc
+    fi
+}    
+
 detect_os () {
 # OS/Distro Detection
     # Try lsb_release, fallback with /etc/issue then uname command
@@ -53,13 +63,6 @@ setup_per_os () {
 }
 
 final_check () {
-    SOURCE_FILE="NONE"
-    if [ -e $HOME/.zshrc ]; then
-        SOURCE_FILE=$HOME/.zshrc
-    elif [ -e $HOME/.bashrc ]; then
-        SOURCE_FILE=$HOME/.bashrc
-    fi
-
     if [ "SOURCE_FILE" = "NONE" ]; then
         echo ".zshrc .bashrc not found at HOME folder: $HOME ! "
     else
@@ -73,6 +76,7 @@ final_check () {
 
 #Main task
 echo " "
+pre_check  
 detect_os
 setup_per_os
 final_check
