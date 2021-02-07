@@ -27,43 +27,53 @@ detect_os () {
     echo " OS Type detected: $OS"
 }
 
+
+setup_per_os () {
+    # Run tasks based on OS distributions
+    echo " Setting for $OS"
+
+    if [ $OS = "MacOS" ]; then
+        #./install-scripts/mac-install-scripts.sh
+        ./install-scripts/create-symlinks.sh
+
+    elif [ $OS = "Debian" ]; then
+        # debian_task
+        #./install-scripts/ubuntu-install-scripts.sh
+        ./install-scripts/create-symlinks.sh
+
+    elif  [ $OS = "RedHat" ]; then
+        # redhat_centos_task
+        #./install-scripts/centos-install-scripts.sh
+        ./install-scripts/create-symlinks.sh
+
+    elif [ $OS = "SUSE" ]; then
+        echo "Do nothing for OS: $OS"
+        # sudo zypper install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
+    fi
+}
+
+final_check () {
+    SOURCE_FILE="NONE"
+    if [ -e $HOME/.zshrc ]; then
+        SOURCE_FILE=$HOME/.zshrc
+    elif [ -e $HOME/.bashrc ]; then
+        SOURCE_FILE=$HOME/.bashrc
+    fi
+
+    if [ "SOURCE_FILE" = "NONE" ]; then
+        echo ".zshrc .bashrc not found at HOME folder: $HOME ! "
+    else
+        echo " "
+        echo "Setup done! Your config will be applied automatically for new terminals"
+        echo "Or you may run below command manually to apply the config for your current terminal:"
+        echo " "
+        echo "source $SOURCE_FILE"  
+    fi    
+}
+
 #Main task
+echo " "
 detect_os
-# echo "OS Distribution is: $OS"
-
-# Run tasks based on OS distributions
-echo " Setting for $OS"
-
-if [ $OS = "MacOS" ]; then
-    #./install-scripts/mac-install-scripts.sh
-    ./install-scripts/create-symlinks.sh
-
-elif [ $OS = "Debian" ]; then
-    # debian_task
-    #./install-scripts/ubuntu-install-scripts.sh
-    ./install-scripts/create-symlinks.sh
-
-elif  [ $OS = "RedHat" ]; then
-    # redhat_centos_task
-    #./install-scripts/centos-install-scripts.sh
-    ./install-scripts/create-symlinks.sh
-
-elif [ $OS = "SUSE" ]; then
-    echo "Do nothing for OS: $OS"
-    # sudo zypper install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
-fi
-
-# apply the config
-
-echo " "
-echo "Setup done! Your config will be applied automatically for new terminals"
-echo "Or you may run below command manually to apply the config for your current terminal"
-echo " "
-
-echo "if [ -e $HOME/.zshrc ]; then"
-echo "    source $HOME/.zshrc"
-echo "elif [ -e $HOME/.bashrc ]; then"
-echo "    source $HOME/.bashrc "
-echo "fi"
-
+setup_per_os
+final_check
 echo " "
