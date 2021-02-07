@@ -11,7 +11,7 @@ Config your terminal environment at anywhere for Ubuntu, CentOS!
 1. Clone this repo to your local
 ```
 git clone https://github.com/jimmycgz/dotfiles.git
-bash dotfiles/run.sh
+./dotfiles/run.sh
 ```
 
 
