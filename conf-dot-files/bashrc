@@ -6,16 +6,20 @@
 
 # Dot files for Bash
 
+[ -f ~/.bash_functions ] && source ~/.bash_functions
+
 if [ -e $HOME/.bash_aliases ]; then
     source $HOME/.bash_aliases
 fi
 
 [ -f ~/.bash_docker_aliases ] && source ~/.bash_docker_aliases
 [ -f ~/.bash_kubectl_aliases ] && source ~/.bash_kubectl_aliases
-# [ -f ~/.bash_functions ] && source ~/.bash_functions
+
 
 
 # Dot files for zsh
+
+[ -f ~/.bashrc_functions ] && source ~/.bashrc_functions
 
 if [ -e $HOME/.bashrc_aliases ]; then
     source $HOME/.bashrc_aliases
@@ -23,7 +27,7 @@ fi
 
 [ -f ~/.bashrc_docker_aliases ] && source ~/.bashrc_docker_aliases
 [ -f ~/.bashrc_kubectl_aliases ] && source ~/.bashrc_kubectl_aliases
-# [ -f ~/.bashrc_functions ] && source ~/.bashrc_functions
+
 
 
 

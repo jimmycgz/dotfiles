@@ -53,4 +53,12 @@ elif [ $OS = "SUSE" ]; then
     # sudo zypper install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
 fi
 
+source ~/.bashrc
+# apply the config
+
+if [ -e $HOME/.zshrc ]; then
+    source .zshrc
+elif [ -e $HOME/.bashrc ]; then
+    source .bashrc 
+fi
 
