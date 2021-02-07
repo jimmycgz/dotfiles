@@ -1,7 +1,7 @@
 syntax on
 
 " autoload pathogen plugin
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " use 'jj' to escape INSERT mode
 inoremap jj <ESC>
@@ -31,7 +31,7 @@ filetype indent plugin on
 set wildmenu 
 
 " sets colorscheme which is from .vim/colors folder
-colorscheme molokai
+" colorscheme molokai
 
 " case insensitive search, except when using capital letters
 set ignorecase
