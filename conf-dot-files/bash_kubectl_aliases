@@ -16,7 +16,7 @@
 alias gh='history|grep'
 
 # search aliases and commands
-alias gk='cat_k8s | grep'
+alias gk='cat_k8s|grep'
 
 cat_k8s() {
     if [ -e $HOME/.bash_kubectl_aliases ]; then

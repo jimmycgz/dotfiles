@@ -57,8 +57,8 @@ source ~/.bashrc
 # apply the config
 
 if [ -e $HOME/.zshrc ]; then
-    source .zshrc
+    source $HOME/.zshrc
 elif [ -e $HOME/.bashrc ]; then
-    source .bashrc 
+    source $HOME/.bashrc 
 fi
 
