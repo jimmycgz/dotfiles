@@ -19,7 +19,7 @@ mkdir -p $BKP_DOT_FOLDER
 IFS=' '
 OLD_FILES="vim vimrc bashrc zshrc gitconfig tmux tmuxconf bash_aliases bashrc_aliases bash_docker_aliases bashrc_docker_aliases bash_kubectl_aliases bashrc_kubectl_aliases"
 for FILE in $OLD_FILES; do 
-    if [ -e $HOME/.$FILE ]; then
+    if [ -e $HOME/.$FILE && $dotfiles_dir/$FILE ]; then
         mv $HOME/.$FILE $BKP_DOT_FOLDER > /dev/null 2>&1
         ln -sf $dotfiles_dir/$FILE $HOME/.$FILE > /dev/null 2>&1
     fi
@@ -36,7 +36,7 @@ ls -a $BKP_DOT_FOLDER
 #==============
 # Add docker and k8s dot files
 #==============
-
+echo " "
 IFS=' '
 K8S_FILES="bash_aliases bash_docker_aliases bash_kubectl_aliases"
 for FILE in $K8S_FILES; do 
