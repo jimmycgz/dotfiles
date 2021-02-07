@@ -35,18 +35,18 @@ detect_os
 echo "Setting for $OS"
 
 if [ $OS = "MacOS" ]; then
-    #./dotfiles/install-scripts/mac-install-scripts.sh
-    ./dotfiles/install-scripts/create-symlinks.sh
+    #./install-scripts/mac-install-scripts.sh
+    ./install-scripts/create-symlinks.sh
 
 elif [ $OS = "Debian" ]; then
     # debian_task
-    #./dotfiles/install-scripts/ubuntu-install-scripts.sh
-    ./dotfiles/install-scripts/create-symlinks.sh
+    #./install-scripts/ubuntu-install-scripts.sh
+    ./install-scripts/create-symlinks.sh
 
 elif  [ $OS = "RedHat" ]; then
     # redhat_centos_task
-    #./dotfiles/install-scripts/centos-install-scripts.sh
-    ./dotfiles/install-scripts/create-symlinks.sh
+    #./install-scripts/centos-install-scripts.sh
+    ./install-scripts/create-symlinks.sh
 
 elif [ $OS = "SUSE" ]; then
     echo "Do nothing for OS: $OS"
