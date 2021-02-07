@@ -18,14 +18,16 @@ alias gh='history|grep'
 # search aliases and commands
 
 
-function cat_k8s () {
+function find_k8s_alias () {
+    echo " "
     if [ -e $HOME/.bash_kubectl_aliases ]; then
-        cat $HOME/.bash_kubectl_aliases
+        cat $HOME/.bash_kubectl_aliases | grep $1
     elif [ -e $HOME/.bashrc_kubectl_aliases ]; then
-        cat $HOME/.bashrc_kubectl_aliases  
+        cat $HOME/.bashrc_kubectl_aliases | grep $1
     fi
+    echo " "
 }
-alias gk='cat_k8s | grep'
+alias gk='find_k8s_alias'
 
 
 alias k='kubectl'

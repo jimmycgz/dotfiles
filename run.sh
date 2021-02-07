@@ -56,7 +56,8 @@ fi
 # apply the config
 
 echo " "
-echo "Run below command manually to apply the config"
+echo "Please Run below command manually to apply the config"
+echo " "
 
 echo "if [ -e $HOME/.zshrc ]; then"
 echo "    source $HOME/.zshrc"
