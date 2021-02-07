@@ -36,14 +36,13 @@ ls -a $BKP_DOT_FOLDER
 #==============
 # Add docker and k8s dot files
 #==============
-export BKP_DOT_FOLDER=$HOME/BKP-dotfiles-$(date "+DATE-%Y-%m-%d")
-mkdir -p $BKP_DOT_FOLDER
 
 IFS=' '
-K8S_FILES="bash_docker_aliases bash_kubectl_aliases "
+K8S_FILES="bash_docker_aliases bash_kubectl_aliases"
 for FILE in $K8S_FILES; do 
     if [ -e $dotfiles_dir/$FILE ]; then
         ln -sf $dotfiles_dir/$FILE $HOME/.$FILE > /dev/null 2>&1
+        echo "Linked: $FILE"
     fi
     
 done
