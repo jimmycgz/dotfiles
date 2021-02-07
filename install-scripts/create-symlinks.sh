@@ -7,7 +7,7 @@
 #==============
 # Variables
 #==============
-dotfiles_dir=$(PWD)/conf-dot-files
+dotfiles_dir=$(PWD)/dotfiles/conf-dot-files
 
 #==============
 # Backup existing dot files and folders
