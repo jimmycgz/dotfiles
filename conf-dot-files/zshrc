@@ -15,6 +15,7 @@ fi
 [ -f $HOME/.bash_docker_aliases ] && source $HOME/.bash_docker_aliases
 [ -f $HOME/.bash_kubectl_aliases ] && source $HOME/.bash_kubectl_aliases
 
+
 # Dot files for zsh
 
 [ -f $HOME/.bashrc_functions ] && source $HOME/.bashrc_functions
@@ -25,9 +26,6 @@ fi
 
 [ -f $HOME/.bashrc_docker_aliases ] && source $HOME/.bashrc_docker_aliases
 [ -f $HOME/.bashrc_kubectl_aliases ] && source $HOME/.bashrc_kubectl_aliases
-
-
-source <(kubectl completion bash)
 
 
 # Resolve python3.9 issue with error: AttributeError: module 'importlib' has no attribute 'util'

@@ -28,11 +28,6 @@ fi
 [ -f $HOME/.bashrc_kubectl_aliases ] && source $HOME/.bashrc_kubectl_aliases
 
 
-
-
-source <(kubectl completion bash)
-
-
 # Resolve python3.9 issue with error: AttributeError: module 'importlib' has no attribute 'util'
 # solution: user python 3.8 
 

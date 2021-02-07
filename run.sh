@@ -32,7 +32,7 @@ detect_os
 # echo "OS Distribution is: $OS"
 
 # Run tasks based on OS distributions
-echo "Setting for $OS"
+echo " Setting for $OS"
 
 if [ $OS = "MacOS" ]; then
     #./install-scripts/mac-install-scripts.sh
