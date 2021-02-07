@@ -38,7 +38,7 @@ ls -a $BKP_DOT_FOLDER
 #==============
 
 IFS=' '
-K8S_FILES="bash_docker_aliases bash_kubectl_aliases"
+K8S_FILES="bash_aliases bash_docker_aliases bash_kubectl_aliases"
 for FILE in $K8S_FILES; do 
     if [ -e $dotfiles_dir/$FILE ]; then
         ln -sf $dotfiles_dir/$FILE $HOME/.$FILE > /dev/null 2>&1
