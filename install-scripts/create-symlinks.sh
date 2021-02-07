@@ -1,35 +1,39 @@
-#!/bin/zsh
+#!/bin/bash
+
+
+# Features:
+# Config alias by creating symlinks of dotfile in the home folder for dot file
 
 #==============
 # Variables
 #==============
-dotfiles_dir=~/dotfiles
+dotfiles_dir=$(PWD)/conf-dot-files
 
 #==============
-# Delete existing dot files and folders
+# Backup existing dot files and folders
 #==============
-rm -rf ~/.vim > /dev/null 2>&1
-rm -rf ~/.vimrc > /dev/null 2>&1
-rm -rf ~/.bashrc > /dev/null 2>&1
-rm -rf ~/.tmux > /dev/null 2>&1
-rm -rf ~/.tmux.conf > /dev/null 2>&1
-rm -rf ~/.zshrc > /dev/null 2>&1
-rm -rf ~/.gitconfig > /dev/null 2>&1
+export BKP_DOT_FOLDER=$HOME/BKP-dotfiles-$(date "+DATE-%Y-%m-%d")
+mkdir -p $BKP_DOT_FOLDER
 
-#==============
-# Create symlinks in the home folder
-# Allow overriding with files of matching names in the custom-configs dir
-#==============
-ln -sf $dotfiles_dir/vim ~/.vim
-ln -sf $dotfiles_dir/vimrc ~/.vimrc
-ln -sf $dotfiles_dir/bashrc ~/.bashrc
-ln -sf $dotfiles_dir/tmux ~/.tmux
-ln -sf $dotfiles_dir/zshrc ~/.zshrc
-ln -sf $dotfiles_dir/gitconfig ~/.gitconfig
-ln -sf $dotfiles_dir/tmux.conf ~/.tmux.conf
-ln -sf $dotfiles_dir/oh-my-zsh ~/.oh-my-zsh
+IFS=' '
+OLD_FILES="vim vimrc bashrc zshrc gitconfig tmux tmuxconf bash_aliases bashrc_aliases bash_docker_aliases bashrc_docker_aliases bash_kubectl_aliases bashrc_kubectl_aliases"
+for FILE in $OLD_FILES; do 
+    if [ -e $HOME/.$FILE ]; then
+        mv $HOME/.$FILE $BKP_DOT_FOLDER > /dev/null 2>&1
+        ln -sf $dotfiles_dir/$FILE $HOME/.$FILE > /dev/null 2>&1
+    fi
+    
+done
+
+unset IFS
+
+
+echo " "
+echo " Below legacy dot files are moved to folder: $BKP_DOT_FOLDER"
+ls -a $BKP_DOT_FOLDER
+
 
 #==============
 # Set zsh as the default shell
 #==============
-chsh -s /bin/zsh
+# chsh -s /bin/zsh

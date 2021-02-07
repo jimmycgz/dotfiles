@@ -1,0 +1,43 @@
+# Moved all aliases to bash_aliases
+
+# Usage: 
+# source ~/.bashrc
+# source ~/.bashrc/.zshrc
+
+# Dot files for Bash
+
+if [ -e $HOME/.bashrc_aliases ]; then
+    source $HOME/.bashrc_aliases
+fi
+
+[ -f ~/.bash_docker_aliases ] && source ~/.bash_docker_aliases
+[ -f ~/.bash_docker_aliases ] && source ~/.bash_docker_aliases
+# [ -f ~/.bash_functions ] && source ~/.bash_functions
+
+
+# Dot files for zsh
+
+if [ -e $HOME/.bashrc_aliases ]; then
+    source $HOME/.bashrc_aliases
+fi
+
+[ -f ~/.bashrc_kbectl_aliases ] && source ~/.bashrc_kubectl_aliases
+[ -f ~/.bashrc_kbectl_aliases ] && source ~/.bashrc_kubectl_aliases
+# [ -f ~/.bashrc_functions ] && source ~/.bashrc_functions
+
+
+
+source <(kubectl completion bash)
+
+
+# Resolve python3.9 issue with error: AttributeError: module 'importlib' has no attribute 'util'
+# solution: user python 3.8 
+
+# make sure python3 uses 3.8
+# which python3
+# should be /usr/bin/python3
+
+# remove the incorerct soft link of 3.9
+# rm /usr/local/bin/python3
+
+export CLOUDSDK_PYTHON=python3 
