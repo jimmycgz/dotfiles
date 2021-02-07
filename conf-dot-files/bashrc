@@ -11,7 +11,7 @@ if [ -e $HOME/.bashrc_aliases ]; then
 fi
 
 [ -f ~/.bash_docker_aliases ] && source ~/.bash_docker_aliases
-[ -f ~/.bash_docker_aliases ] && source ~/.bash_docker_aliases
+[ -f ~/.bash_kubectl_aliases ] && source ~/.bash_kubectl_aliases
 # [ -f ~/.bash_functions ] && source ~/.bash_functions
 
 
@@ -22,7 +22,7 @@ if [ -e $HOME/.bashrc_aliases ]; then
 fi
 
 [ -f ~/.bashrc_kbectl_aliases ] && source ~/.bashrc_kubectl_aliases
-[ -f ~/.bashrc_kbectl_aliases ] && source ~/.bashrc_kubectl_aliases
+[ -f ~/.bashrc_docker_aliases ] && source ~/.bashrc_docker_aliases
 # [ -f ~/.bashrc_functions ] && source ~/.bashrc_functions
 
 
