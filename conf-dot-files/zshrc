@@ -1,30 +1,30 @@
 # Moved all aliases to bash_aliases
 
 # Usage: 
-# source ~/.bashrc
-# source ~/.bashrc/.zshrc
+# source $HOME/.bashrc
+# source $HOME/.bashrc/.zshrc
 
 # Dot files for Bash
+
+[ -f $HOME/.bash_functions ] && source $HOME/.bash_functions
 
 if [ -e $HOME/.bash_aliases ]; then
     source $HOME/.bash_aliases
 fi
 
-[ -f ~/.bash_docker_aliases ] && source ~/.bash_docker_aliases
-[ -f ~/.bash_kubectl_aliases ] && source ~/.bash_kubectl_aliases
-# [ -f ~/.bash_functions ] && source ~/.bash_functions
-
+[ -f $HOME/.bash_docker_aliases ] && source $HOME/.bash_docker_aliases
+[ -f $HOME/.bash_kubectl_aliases ] && source $HOME/.bash_kubectl_aliases
 
 # Dot files for zsh
+
+[ -f $HOME/.bashrc_functions ] && source $HOME/.bashrc_functions
 
 if [ -e $HOME/.bashrc_aliases ]; then
     source $HOME/.bashrc_aliases
 fi
 
-[ -f ~/.bashrc_docker_aliases ] && source ~/.bashrc_docker_aliases
-[ -f ~/.bashrc_kubectl_aliases ] && source ~/.bashrc_kubectl_aliases
-# [ -f ~/.bashrc_functions ] && source ~/.bashrc_functions
-
+[ -f $HOME/.bashrc_docker_aliases ] && source $HOME/.bashrc_docker_aliases
+[ -f $HOME/.bashrc_kubectl_aliases ] && source $HOME/.bashrc_kubectl_aliases
 
 
 source <(kubectl completion bash)

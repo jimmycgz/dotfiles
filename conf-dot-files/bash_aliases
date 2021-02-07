@@ -1,5 +1,5 @@
 alias ls='ls -F'
-alias ll='ls -lh'
+alias ll='ls -al'
 alias gh='history|grep'
 alias count='find . -type f | wc -l'
 
@@ -9,7 +9,7 @@ alias d='cd_ls'
 alias g=gcloud
 alias gs=gsutil
 
-alias config='/usr/bin/git --git-dir=/Users/ldong/.cfg/ --work-tree=/Users/ldong'
+#alias config='/usr/bin/git --git-dir=/Users/ldong/.cfg/ --work-tree=/Users/ldong'
 alias gm='git add --all && git commit -m'
 alias gb='git branch'
 alias gc='git checkout'

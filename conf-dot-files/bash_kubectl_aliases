@@ -20,14 +20,14 @@ alias gk='cat_k8s|grep'
 
 function cat_k8s () {
     if [ -e $HOME/.bash_kubectl_aliases ]; then
-        cat ~/.bash_kubectl_aliases
+        cat $HOME/.bash_kubectl_aliases
     elif [ -e $HOME/.bashrc_kubectl_aliases ]; then
-        cat ~/.bashrc_kubectl_aliases  
+        cat $HOME/.bashrc_kubectl_aliases  
     fi
 }
 
-alias gk='[ -f ~/.bash_kubectl_aliases ] && cat ~/.bash_kubectl_aliases|grep'
-alias gk='[ -f ~/.bashrc_kubectl_aliases ] && cat ~/.bashrc_kubectl_aliases|grep'
+alias gk='[ -f $HOME/.bash_kubectl_aliases ] && cat $HOME/.bash_kubectl_aliases|grep'
+alias gk='[ -f $HOME/.bashrc_kubectl_aliases ] && cat $HOME/.bashrc_kubectl_aliases|grep'
 
 alias k='kubectl'
 

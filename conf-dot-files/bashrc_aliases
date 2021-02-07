@@ -9,7 +9,7 @@ alias d='cd_ls'
 alias g=gcloud
 alias gs=gsutil
 
-alias config="/usr/bin/git --git-dir=/Users/ldong/.cfg/ --work-tree=$HOME"
+#alias config="/usr/bin/git --git-dir=/Users/ldong/.cfg/ --work-tree=$HOME"
 alias gm='git add --all && git commit -m'
 alias gb='git branch'
 alias gc='git checkout'
