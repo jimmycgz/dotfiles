@@ -55,10 +55,13 @@ fi
 
 # apply the config
 
-if [ -e $HOME/.zshrc ]; then
-    source $HOME/.zshrc
-elif [ -e $HOME/.bashrc ]; then
-    source $HOME/.bashrc 
-fi
+echo " "
+echo "Run below command manually to apply the config"
+
+echo "if [ -e $HOME/.zshrc ]; then"
+echo "    source $HOME/.zshrc"
+echo "elif [ -e $HOME/.bashrc ]; then"
+echo "    source $HOME/.bashrc "
+echo "fi"
 
 echo " "
