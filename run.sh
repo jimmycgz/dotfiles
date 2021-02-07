@@ -56,7 +56,8 @@ fi
 # apply the config
 
 echo " "
-echo "Please Run below command manually to apply the config"
+echo "Setup done! Your config will be applied automatically for new terminals"
+echo "Or you may run below command manually to apply the config for your current terminal"
 echo " "
 
 echo "if [ -e $HOME/.zshrc ]; then"

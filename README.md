@@ -1,8 +1,9 @@
 # dotfiles
 
-Config your terminal environment at anywhere for Ubuntu, CentOS!
+Clone your customized terminal environment to anywhere for Ubuntu, CentOS!
 
 ## Feature list
+* Auto detect Linux Distributions and MacOS
 * Intially setup your terminal environment 
 * Config aliases
 * Install all neccessary tools for you
@@ -15,6 +16,6 @@ cd dotfiles
 ./run.sh
 ```
 
-
+### NOTES:
 
 > You may need to run `sudo yum update -y` or `sudo apt-get update && apt-get upgrade` to update your available packages.
