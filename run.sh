@@ -2,11 +2,12 @@
 
 pre_check () {
     # Assume .zshrc is used if exists, or assume .bashrc is the right one if exists
-    SOURCE_FILE="NONE"
-    if [ -e $HOME/.zshrc ]; then
-        SOURCE_FILE=$HOME/.zshrc
-    elif [ -e $HOME/.bashrc ]; then
-        SOURCE_FILE=$HOME/.bashrc
+    export SOURCE_FILE="NONE"
+    echo "$SHELL"
+    if [ -f $HOME/.zshrc ] && [[ "$SHELL" == *"zsh"* ]]; then
+        export SOURCE_FILE=$HOME/.zshrc
+    elif [ -f $HOME/.bashrc ] && [[ "$SHELL" == *"bash"* ]]; then
+        export SOURCE_FILE=$HOME/.bashrc
     fi
 }    
 
@@ -63,15 +64,19 @@ setup_per_os () {
 }
 
 final_check () {
-    if [ "SOURCE_FILE" = "NONE" ]; then
-        echo ".zshrc .bashrc not found at HOME folder: $HOME ! "
+    echo " "
+    if [[ "$SOURCE_FILE" == "NONE" ]]; then
+        echo " Can't determin the shell type, please manually source any of these files: .zshrc .bashrc at HOME folder: $HOME ! "
     else
-        echo " "
         echo "Setup done! Your config will be applied automatically for new terminals"
         echo "Or you may run below command manually to apply the config for your current terminal:"
         echo " "
         echo "source $SOURCE_FILE"  
-    fi    
+
+    fi  
+
+    echo " "
+    echo "You are not at folder: $(pwd)"
 }
 
 #Main task
