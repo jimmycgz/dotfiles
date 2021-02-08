@@ -1,12 +1,19 @@
 # dotfiles
 
-Clone your customized terminal environment to anywhere for Ubuntu, CentOS!
+Clone your customized terminal environment to anywhere for Ubuntu, CentOS and MacOS!
+
+## Problems to solve when you have a brand new terminal: 
+1. Doesn't have your own aliases
+2. Have to install your needed tools
+3. Config git
+... 
 
 ## Feature list
-* Auto detect Linux Distributions and MacOS
 * Intially setup your terminal environment 
-* Config aliases
+* Config aliases and functions
+* Config Gitconfig
 * Install all neccessary tools for you
+* Auto detect Linux Distributions and MacOS
 
 ### Steps to deploy
 1. Clone this repo to your local
