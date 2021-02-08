@@ -71,12 +71,12 @@ final_check () {
         echo "Setup done! Your config will be applied automatically for new terminals"
         echo "Or you may run below command manually to apply the config for your current terminal:"
         echo " "
-        echo "source $SOURCE_FILE"  
+        echo "cd $HOME && source $SOURCE_FILE"  
 
     fi  
 
     echo " "
-    echo "You are not at folder: $(pwd)"
+    echo "Current folder: $(pwd)"
 }
 
 #Main task
