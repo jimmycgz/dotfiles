@@ -159,7 +159,7 @@ if &t_Co > 255
    hi DiffChange      ctermfg=181 ctermbg=239
    hi DiffDelete      ctermfg=162 ctermbg=53
    hi DiffText        ctermfg=DarkRed ctermbg=LightYellow
-   #hi DiffText                    ctermbg=102 cterm=bold
+   " hi DiffText                    ctermbg=102 cterm=bold
 
    hi Directory       ctermfg=118               cterm=bold
    hi Error           ctermfg=219 ctermbg=89
