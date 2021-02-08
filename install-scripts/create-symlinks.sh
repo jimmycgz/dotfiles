@@ -54,8 +54,9 @@ add_default_dot_files () {
 
 add_vim_plug_in () {
     if [ -f $HOME/.vimrc ] ; then
-    mkdir -p $HOME/.vim
-    cp $dotfiles_dir/vim/* $HOME/.vim
+        mkdir -p $HOME/.vim
+        cp $dotfiles_dir/vim/* $HOME/.vim
+    fi
 }
 
 #==============
