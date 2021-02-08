@@ -59,6 +59,11 @@ add_vim_plug_in () {
     fi
 }
 
+# Main, starts here
+replace_dot_files
+add_default_dot_files
+add_vim_plug_in 
+
 #==============
 # Set zsh as the default shell
 #==============
