@@ -1,5 +1,5 @@
 alias ls='ls -F'
-alias ll='ls -lh'
+# alias ll='ls -lh'
 alias gh='history|grep'
 alias count='find . -type f | wc -l'
 
