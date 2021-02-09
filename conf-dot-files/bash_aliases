@@ -1,0 +1,36 @@
+alias ls='ls -F'
+alias ll='ls -al'
+alias gh='history|grep'
+alias count='find . -type f | wc -l'
+
+alias cl='clear'
+alias d='cd_ls'
+
+alias g=gcloud
+alias gs=gsutil
+
+#alias config='/usr/bin/git --git-dir=/Users/ldong/.cfg/ --work-tree=/Users/ldong'
+alias gm='git add --all && git commit -m'
+alias gb='git branch'
+alias gc='git checkout'
+
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tfip='terraform init && terraform plan'
+alias tfap='terraform apply'
+
+# Feature: cd a folder ad list files
+# Usage cl Downloads
+# Refer: https://opensource.com/article/19/7/bash-aliases
+
+function cd_ls () {
+    DIR="$*";
+    # if no DIR given, go home
+    if [ $# -lt 1 ]; then
+                DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        ls -F --color=auto
+}
