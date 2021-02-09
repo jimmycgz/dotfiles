@@ -7,6 +7,8 @@ syntax on
 inoremap jj <ESC>
 
 " when opening a new line, keep the same indent as the line you're currently on
+set paste
+set nowrap
 set autoindent
 set expandtab
 set number
