@@ -71,7 +71,7 @@ final_check () {
         echo "Setup done! Your config will be applied automatically for new terminals"
         echo "Or you may run below command manually to apply the config for your current terminal:"
         echo " "
-        echo "cd $HOME && source $SOURCE_FILE"  
+        echo "cd $HOME && source $SOURCE_FILE && clear"  
 
     fi  
 
