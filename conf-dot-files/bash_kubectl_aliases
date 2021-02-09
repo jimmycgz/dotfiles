@@ -40,13 +40,13 @@ alias ke="kubectl explain"
 alias ker="kubectl explain --recursive"
 alias kerpv="kubectl explain --recursive persistentvolume | grep -A5"
 
-alias etcd='ETCDCTL_API=3 etcdctl --endpoints $EP snapshot save path --cacert --cert --key'
-alias hetcd='ETCDCTL_API=3 etcdctl --endpoints $EP snapshot save path --cacert --cert --key'
-alias etcdchk='ETCDCTL_API=3 etcdctl --write-out=table snapshot status path  --cacert --cert --key'
-alias hetcdchk='ETCDCTL_API=3 etcdctl --write-out=table snapshot status path  --cacert --cert --key'
+alias etcd='ETCDCTL_API=3 etcdctl --endpoints'
+alias hetcd="echo ' ' && echo ETCDCTL_API=3 etcdctl --endpoints snapshot save path --cacert --cert --key && echo ' ' "
+alias etcdchk='ETCDCTL_API=3 etcdctl --write-out=table snapshot status'
+alias hetcdchk="echo ' ' && echo ETCDCTL_API=3 etcdctl --write-out=table snapshot status path  --cacert --cert --key && echo ' ' "
 
 alias kexp="kubectl expose"
-alias hkexp="kubectl expose deploy --name --type ClusterIP --port"
+alias hkexp="echo ' ' && echo kubectl expose deploy --name --type ClusterIP --port && echo ' ' "
 alias kdryexp="kubectl expose --dry-run=client"
 alias kexpdep="kubectl expose deploy"
 alias kdryexpdep="kubectl expose --dry-run=client deploy"
