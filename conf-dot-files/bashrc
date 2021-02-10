@@ -4,6 +4,8 @@
 # source $HOME/.bashrc
 # source $HOME/.bashrc/.zshrc
 
+export PATH=$HOME/kubectx:$PATH
+
 # Dot files for Bash
 
 [ -f $HOME/.bash_functions ] && source $HOME/.bash_functions
