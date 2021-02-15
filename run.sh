@@ -44,17 +44,17 @@ setup_per_os () {
     echo " Setting for $OS"
 
     if [ $OS = "MacOS" ]; then
-        #./install-scripts/mac-install-scripts.sh
+        #./install-scripts/mac-install-pgks.sh
         ./install-scripts/create-symlinks.sh
 
     elif [ $OS = "Debian" ]; then
         # debian_task
-        ./install-scripts/ubuntu-install-scripts.sh
+        ./install-scripts/ubuntu-install-pgks.sh
         ./install-scripts/create-symlinks.sh
 
     elif  [ $OS = "RedHat" ]; then
         # redhat_centos_task
-        #./install-scripts/centos-install-scripts.sh
+        #./install-scripts/centos-install-pgks.sh
         ./install-scripts/create-symlinks.sh
 
     elif [ $OS = "SUSE" ]; then
