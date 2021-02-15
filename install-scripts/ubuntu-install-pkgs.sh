@@ -49,6 +49,7 @@ function install_tmux () {
     fi
     
     if type -p tmux > /dev/null; then
+        cp conf-dot-files/tmux.conf $HOME/.tmux.conf
         echo "tmux installed" >> $log_file
     else
         echo "tmux failed to install" >> $log_file
