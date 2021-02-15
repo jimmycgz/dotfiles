@@ -43,6 +43,12 @@ function install_silver () {
 function install_tmux () {
     sudo apt-get -y install tmux
     if type -p tmux > /dev/null; then
+        echo "sudo doesnott work,trying without sudo " >> $log_file
+    else
+        apt-get -y install tmux
+    fi
+    
+    if type -p tmux > /dev/null; then
         echo "tmux installed" >> $log_file
     else
         echo "tmux failed to install" >> $log_file
