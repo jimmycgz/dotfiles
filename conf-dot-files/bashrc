@@ -4,7 +4,7 @@
 # source $HOME/.bashrc
 # source $HOME/.bashrc/.zshrc
 
-export PATH=$HOME/kubectx:$PATH
+export PATH=$HOME/google-cloud-sdk/bin:$HOME/kubectx:$PATH
 
 # Dot files for Bash
 

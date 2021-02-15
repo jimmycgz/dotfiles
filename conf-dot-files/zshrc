@@ -7,7 +7,7 @@
 # Dot files for Bash
 
 
-export PATH=$HOME/kubectx:$PATH
+export PATH=$HOME/google-cloud-sdk/bin:$HOME/kubectx:$PATH
 
 [ -f $HOME/.bash_functions ] && source $HOME/.bash_functions
 

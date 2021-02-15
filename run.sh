@@ -49,7 +49,7 @@ setup_per_os () {
 
     elif [ $OS = "Debian" ]; then
         # debian_task
-        #./install-scripts/ubuntu-install-scripts.sh
+        ./install-scripts/ubuntu-install-scripts.sh
         ./install-scripts/create-symlinks.sh
 
     elif  [ $OS = "RedHat" ]; then
