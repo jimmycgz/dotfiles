@@ -19,7 +19,7 @@ replace_dot_files () {
     mkdir -p $BKP_DOT_FOLDER
 
     IFS=' '
-    OLD_FILES="vim vimrc bashrc zshrc tmux tmuxconf bash_aliases bashrc_aliases bash_docker_aliases bashrc_docker_aliases bash_kubectl_aliases bashrc_kubectl_aliases"
+    OLD_FILES="vim vimrc bashrc zshrc tmux tmux.conf bash_aliases bashrc_aliases bash_docker_aliases bashrc_docker_aliases bash_kubectl_aliases bashrc_kubectl_aliases"
     for FILE in $OLD_FILES; do 
         if [ "$FILE" != "" ] && [ ! -L $HOME/.$FILE ] && [ -f $dotfiles_dir/$FILE ]; then
             #-L FILE - True if the FILE exists and is a symbolic link.
