@@ -43,7 +43,7 @@ function install_silver () {
 function install_tmux () {
     sudo apt-get -y install tmux
     if type -p tmux > /dev/null; then
-        echo "sudo doesnott work,trying without sudo " >> $log_file
+        echo "sudo doesnot work,trying without sudo " >> $log_file
     else
         apt-get -y install tmux
     fi
@@ -69,6 +69,7 @@ function install_venv () {
     pip install virtualenvwrapper
     if pip freeze | grep virtualenvwrapper > /dev/null; then
         echo "virtualenvwrapper installed" >> $log_file
+        tmux
     else
         echo "virtualenvwrapper failed to install" >> $log_file
     fi
@@ -76,7 +77,7 @@ function install_venv () {
 
 
 # Start here
-sudo apt-get update
+sudo apt-get update > /dev/null
 install_tmux
 #==============
 # Give the user a summary of what has been installed
