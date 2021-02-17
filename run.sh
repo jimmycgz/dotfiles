@@ -43,21 +43,21 @@ setup_per_os () {
     # Run tasks based on OS distributions
     echo " Setting for $OS"
 
-    if [ $OS = "MacOS" ]; then
+    if [[ $OS == "MacOS" ]]; then
         #./install-scripts/mac-install-pkgs.sh
         ./install-scripts/create-symlinks.sh
 
-    elif [ $OS = "Debian" ]; then
+    elif [[ $OS == "Debian" ]]; then
         # debian_task
         ./install-scripts/ubuntu-install-pkgs.sh
         ./install-scripts/create-symlinks.sh
 
-    elif  [ $OS = "RedHat" ]; then
+    elif  [[ $OS == "RedHat" ]]; then
         # redhat_centos_task
         #./install-scripts/centos-install-pkgs.sh
         ./install-scripts/create-symlinks.sh
 
-    elif [ $OS = "SUSE" ]; then
+    elif [[ $OS == "SUSE" ]]; then
         echo "Do nothing for OS: $OS"
         # sudo zypper install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
     fi
