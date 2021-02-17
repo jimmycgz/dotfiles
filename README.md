@@ -26,3 +26,6 @@ cd dotfiles
 ### NOTES:
 
 > You may need to run `sudo yum update -y` or `sudo apt-get update && apt-get upgrade` to update your available packages.
+
+### TODO:
+* Test on GitBash Terminal on Windows
