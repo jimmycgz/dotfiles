@@ -31,6 +31,9 @@ alias gk='find_k8s_alias'
 
 alias k='kubectl'
 
+alias kall='kubectl get all'
+alias kalln='kubectl get all -n'
+
 alias kc='kubectl create'
 alias kcf='kubectl create -f'
 alias kcfdry='kubectl create --dry-run=client -f'
@@ -38,7 +41,7 @@ alias kcns='kubectl create ns'
 
 alias ke="kubectl explain"
 alias ker="kubectl explain --recursive"
-alias kerpv="kubectl explain --recursive persistentvolume | grep -A5"
+alias kerpv="kubectl explain --recursive persistentvolume | grep -A9"
 
 alias etcd='ETCDCTL_API=3 etcdctl --endpoints'
 alias hetcd="echo ' ' && echo ETCDCTL_API=3 etcdctl --endpoints snapshot save path --cacert --cert --key && echo ' ' "
@@ -85,7 +88,7 @@ alias kgpo='kubectl get pods'
 alias kkgpo='kubectl -n kube-system get pods'
 alias kdpo='kubectl describe pods'
 alias kkdpo='kubectl -n kube-system describe pods'
-alias krmpo='kubectl delete pods'
+alias krmpo='kubectl delete pods --force'
 alias kkrmpo='kubectl -n kube-system delete pods'
 alias kgdep='kubectl get deploy'
 alias kkgdep='kubectl -n kube-system get deploy'
