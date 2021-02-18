@@ -58,7 +58,7 @@ alias kexpo="kubectl expose pod"
 alias kdryexpo="kubectl expose --dry-run=client pod"
 alias kdryexpooyaml="kubectl expose --dry-run=client -o yaml pod"
 
-alias qlist="echo '#q01:\n\n#q02:\n\n#q03:\n\n#q04:\n\n#q05:\n\n#q06:\n\n#q07:\n\n#q08:\n\n#q09:\n\n#q10:\n\n#q11:\n\n#q12:\n\n#q13:\n\n#q14:\n\n#q15:\n\n#q16:\n\n#q17:\n\n#q18:\n\n#q19:\n\n#q20:'"
+alias qlist="echo '#q01:'&&echo ' '&&echo ' '&&echo '#q02:'&&echo ' '&&echo ' '&&echo '#q03:'&&echo ' '&&echo ' '&&echo '#q04:'&&echo ' '&&echo ' '&&echo '#q05:'&&echo ' '&&echo ' '&&echo '#q06:'&&echo ' '&&echo ' '&&echo '#q07:'&&echo ' '&&echo ' '&&echo '#q08:'&&echo ' '&&echo ' '&&echo '#q09:'&&echo ' '&&echo ' '&&echo '#q10:'&&echo ' '&&echo ' '&&echo '#q11:'&&echo ' '&&echo ' '&&echo '#q12:'&&echo ' '&&echo ' '&&echo '#q13:'&&echo ' '&&echo ' '&&echo '#q14:'&&echo ' '&&echo ' '&&echo '#q15:'&&echo ' '&&echo ' '&&echo '#q16:'&&echo ' '&&echo ' '&&echo '#q17:'&&echo ' '&&echo ' '&&echo '#q18:'&&echo ' '&&echo ' '&&echo '#q19:'&&echo ' '&&echo ' '&&echo '#q20:'"
 
 alias kk='kubectl -n kube-system'
 alias ka='kubectl apply --recursive -f'
