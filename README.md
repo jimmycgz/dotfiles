@@ -29,3 +29,4 @@ cd dotfiles
 
 ### TODO:
 * Test on GitBash Terminal on Windows
+

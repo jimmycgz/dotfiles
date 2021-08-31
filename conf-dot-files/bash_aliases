@@ -9,10 +9,13 @@ alias d='cd_ls'
 alias g=gcloud
 alias gs=gsutil
 
+alias p3='/usr/local/bin/python3'
+
 #alias config='/usr/bin/git --git-dir=/Users/ldong/.cfg/ --work-tree=/Users/ldong'
 alias gm='git add --all && git commit -m'
 alias gb='git branch'
 alias gc='git checkout'
+alias gst='git status'
 
 alias tf='terraform'
 alias tfi='terraform init'
