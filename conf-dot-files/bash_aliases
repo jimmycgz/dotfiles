@@ -7,6 +7,7 @@ alias cl='clear'
 alias d='cd_ls'
 
 alias g=gcloud
+alias gssh='gcloud compute ssh'
 alias gs=gsutil
 
 alias p3='/usr/local/bin/python3'
