@@ -6,8 +6,11 @@ alias count='find . -type f | wc -l'
 alias cl='clear'
 alias d='cd_ls'
 
+alias k8up='cd ~/proj/k8s/jmy-k8s && vagrant up'
 alias g=gcloud
 alias gssh='gcloud compute ssh'
+alias gconf='gcloud config configurations'
+alias gke='gcloud container clusters'
 alias gs=gsutil
 
 alias p3='/usr/local/bin/python3'
@@ -17,7 +20,8 @@ alias gm='git add --all && git commit -m'
 alias gb='git branch'
 alias gc='git checkout'
 alias gst='git status'
-
+alias gp='git push'
+alias gpnew='git push --set-upstream origin'
 alias tf='terraform'
 alias tfi='terraform init'
 alias tfp='terraform plan'
