@@ -9,6 +9,12 @@ alias count='find . -type f | wc -l'
 # ------------------------------------
 #Docker commands, refer to: https://github.com/tcnksm/docker-alias/blob/master/zshrc
 
+# Docker compose
+alias dc="docker compose"
+alias dcdn="docker compose down"
+alias dcup="docker compose up -d"
+alias dcb="docker compose --build"
+
 # Get latest container ID
 alias dl="docker ps -l -q"
 
