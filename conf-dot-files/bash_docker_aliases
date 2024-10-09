@@ -9,47 +9,50 @@ alias count='find . -type f | wc -l'
 # ------------------------------------
 #Docker commands, refer to: https://github.com/tcnksm/docker-alias/blob/master/zshrc
 
-# Docker compose
-alias dc="docker compose"
-alias dcdn="docker compose down"
-alias dcup="docker compose up -d"
-alias dcb="docker compose --build"
+# docker-compose
+alias dc="docker-compose"
+alias dcdn="docker-compose down"
+alias dcup="docker-compose up -d"
+alias dcb="docker-compose build"
+
+alias dk='docker'
+alias dklo='docker logs'
+alias dklof='docker logs -f'
 
 # Get latest container ID
-alias dl="docker ps -l -q"
+alias dkl="docker ps -l -q"
 
 # Get container process
-alias dps="docker ps"
+alias dkps="docker ps"
 
 # Get process included stop container
-alias dpa="docker ps -a"
+alias dkpsa="docker ps -a"
 
 # Get images
-alias di="docker images"
+alias dki="docker images"
 
 # Get container IP
-alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dkip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 
 # Run deamonized container, e.g., $dkd base /bin/echo hello
 alias dkd="docker run -d -P"
 
 # Run interactive container, e.g., $dki base /bin/bash
-alias dki="docker run -i -t -P"
 
 # Execute interactive container, e.g., $dex base /bin/bash
-alias dex="docker exec -i -t"
+alias dkex="docker exec -i -t"
 
 # Stop all containers
 dstop() { docker stop $(docker ps -a -q); }
 
 # Remove all containers
-drm() { docker rm $(docker ps -a -q); }
+# drm() { docker rm $(docker ps -a -q); }
 
 # Stop and Remove all containers
-alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+# docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
 
 # Remove all images
-dri() { docker rmi $(docker images -q); }
+# dri() { docker rmi $(docker images -q); }
 
 # Dockerfile build, e.g., $dbu tcnksm/test 
 dbu() { docker build -t=$1 .; }

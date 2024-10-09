@@ -2,12 +2,15 @@
 
 # Usage: 
 # source $HOME/.bashrc
-# source $HOME/.bashrc/.zshrc
+# source $HOME/.zshrc
 
-# Dot files for Bash
+# Dot files for zsh
 
 
-export PATH=$HOME/google-cloud-sdk/bin:$HOME/kubectx:$PATH
+export g=gcloud
+export glog='gcloud auth login'
+export gloga='gcloud auth application-default login'
+# export CLOUDSDK_PYTHON=python3 
 
 [ -f $HOME/.bash_functions ] && source $HOME/.bash_functions
 
@@ -19,8 +22,6 @@ fi
 [ -f $HOME/.bash_kubectl_aliases ] && source $HOME/.bash_kubectl_aliases
 
 
-# Dot files for zsh
-
 [ -f $HOME/.bashrc_functions ] && source $HOME/.bashrc_functions
 
 if [ -e $HOME/.bashrc_aliases ]; then
@@ -31,14 +32,22 @@ fi
 [ -f $HOME/.bashrc_kubectl_aliases ] && source $HOME/.bashrc_kubectl_aliases
 
 
-# Resolve python3.9 issue with error: AttributeError: module 'importlib' has no attribute 'util'
-# solution: user python 3.8 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jimmy.cui/Documents/my-apps/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jimmy.cui/Documents/my-apps/google-cloud-sdk/path.zsh.inc'; fi
 
-# make sure python3 uses 3.8
-# which python3
-# should be /usr/bin/python3
+# The next line enables shell command completion for gcloud.
+# if [ -f '/Users/jimmy.cui/Documents/my-apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jimmy.cui/Documents/my-apps/google-cloud-sdk/completion.zsh.inc'; fi
 
-# remove the incorerct soft link of 3.9
-# rm /usr/local/bin/python3
 
-export CLOUDSDK_PYTHON=python3 
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+# sudo chown -R jimmy.cui /opt/homebrew 
+# sudo chown -R jimmy.cui /tmp
+
+## To start colima now and restart at login:
+# brew services start colima
+
+# Or, if you don't want/need a background service you can just run:
+#  /opt/homebrew/opt/colima/bin/colima start -f
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
