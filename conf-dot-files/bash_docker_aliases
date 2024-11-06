@@ -1,6 +1,6 @@
 alias ls='ls -F'
 # alias ll='ls -lh'
-alias gh='history|grep'
+# alias gh='history|grep' # conflict with github cli
 alias count='find . -type f | wc -l'
 
 
@@ -19,14 +19,18 @@ alias dk='docker'
 alias dklo='docker logs'
 alias dklof='docker logs -f'
 
-# Get latest container ID
-alias dkl="docker ps -l -q"
-
 # Get container process
 alias dkps="docker ps"
 
 # Get process included stop container
 alias dkpsa="docker ps -a"
+
+alias dkrm="docker rm"
+alias dkex="docker exec -it"
+
+
+# Get latest container ID
+alias dkl="docker ps -l -q"
 
 # Get images
 alias dki="docker images"

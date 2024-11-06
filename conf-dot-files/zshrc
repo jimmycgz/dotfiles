@@ -45,9 +45,14 @@ export PATH="/opt/homebrew/bin:$PATH"
 # sudo chown -R jimmy.cui /opt/homebrew 
 # sudo chown -R jimmy.cui /tmp
 
+# Use this one to start miniconda
+# eval "$(/opt/homebrew/Caskroom/miniconda/base/bin/conda shell.zsh hook)"
+
 ## To start colima now and restart at login:
 # brew services start colima
 
 # Or, if you don't want/need a background service you can just run:
 #  /opt/homebrew/opt/colima/bin/colima start -f
+
+
 export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"

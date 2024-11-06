@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-alias gh='history|grep'
+# alias gh='history|grep' # conflict with github cli
 
 # search aliases and commands
 alias gk='cat_k8s|grep'
